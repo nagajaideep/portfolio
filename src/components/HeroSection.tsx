@@ -1,10 +1,18 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Github, Linkedin, Code } from "lucide-react";
+import GitHubActivity from "./GitHubActivity";
 
 const roles = [
   "Aspiring AI/ML Engineer",
   "Software Engineer",
   "Research Enthusiast",
+];
+
+const socialLinks = [
+  { icon: Linkedin, href: "https://linkedin.com/in/nagajaideep", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/nagajaideep", label: "GitHub" },
+  { icon: Code, href: "https://leetcode.com/nagajaideep", label: "LeetCode" },
 ];
 
 const HeroSection = () => {
@@ -67,10 +75,31 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-muted-foreground max-w-xl text-lg leading-relaxed mb-10"
+          className="text-muted-foreground max-w-xl text-lg leading-relaxed mb-8"
         >
           Building intelligent systems with real-world impact using AI, Machine Learning, and scalable software solutions.
         </motion.p>
+
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="flex items-center gap-4 mb-10"
+        >
+          {socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 transition-all duration-300"
+              aria-label={link.label}
+            >
+              <link.icon size={20} />
+            </a>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,6 +114,9 @@ const HeroSection = () => {
             Contact Me
           </a>
         </motion.div>
+
+        {/* GitHub Activity */}
+        <GitHubActivity />
       </div>
     </section>
   );
