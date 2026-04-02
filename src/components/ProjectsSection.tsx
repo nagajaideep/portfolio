@@ -1,24 +1,89 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+
+type ProjectStatus = "Completed" | "Production" | "In Progress" | "Research" | "Under Review" | "Live";
+
+const statusColors: Record<ProjectStatus, string> = {
+  Completed: "bg-green-500/20 text-green-400 border-green-500/30",
+  Production: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+  "In Progress": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
+  Research: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+  "Under Review": "bg-orange-500/20 text-orange-400 border-orange-500/30",
+  Live: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+};
 
 const projects = [
   {
-    title: "Multimodal Skin Cancer Detection System",
-    description: "AI-based system combining dermoscopic images + clinical metadata. CNN architectures (ResNet, EfficientNet) with attention fusion. Targeting >95% accuracy with explainability (Grad-CAM).",
-    tech: ["Python", "TensorFlow", "ResNet", "EfficientNet", "Grad-CAM"],
-    highlight: true,
+    title: "AI-Powered Customer Support Agent",
+    description: "Multi-agent LLM routing system for intelligent customer support. Routes queries to specialized agents for faster resolution.",
+    tech: ["Python", "LangChain", "FastAPI", "GPT-4"],
+    impact: "Multi-agent LLM routing system",
+    status: "Production" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
   },
   {
-    title: "TeamPulse – Collaborative Workspace",
-    description: "Real-time collaboration platform with task tracking. Integrated with GitHub + Notion. Deployed on Vercel & Render.",
-    tech: ["React", "Node.js", "Socket.IO", "GitHub API", "Vercel"],
-    highlight: false,
+    title: "Multilingual Recipe Translation System",
+    description: "AI-powered recipe translation platform supporting 20+ languages with cultural context preservation.",
+    tech: ["Python", "Transformers", "React", "Node.js"],
+    impact: "1,00,000+ daily users",
+    status: "Production" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
+  },
+  {
+    title: "BioAge-Net",
+    description: "Deep learning model for biological age estimation using multi-modal health data. Achieved MAE of 4.91 years.",
+    tech: ["Python", "TensorFlow", "CNNs", "Medical Imaging"],
+    impact: "MAE of 4.91 years",
+    status: "Under Review" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
+  },
+  {
+    title: "MILK10k Skin Lesion Classifier",
+    description: "Multimodal skin cancer detection combining dermoscopic images + clinical metadata with attention fusion.",
+    tech: ["Python", "ResNet", "EfficientNet", "Grad-CAM"],
+    impact: "Targeting >95% accuracy with explainability",
+    status: "Research" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
+  },
+  {
+    title: "Restaurant Booking Voice Agent",
+    description: "Voice-powered restaurant booking system using speech recognition and NLP for hands-free reservations.",
+    tech: ["Python", "Speech Recognition", "NLP", "Flask"],
+    impact: "Hands-free booking experience",
+    status: "Completed" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
+  },
+  {
+    title: "Kitchen Talk Recorder",
+    description: "Smart kitchen assistant that records and organizes cooking conversations, recipes, and tips using voice AI.",
+    tech: ["React", "Node.js", "Whisper AI", "MongoDB"],
+    impact: "Real-time voice transcription",
+    status: "Live" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
   },
   {
     title: "Gesture Presentation System",
-    description: "Hand gesture-based slide control system. Won 3rd place in hackathon.",
+    description: "Hand gesture-based slide control system using computer vision. Won 3rd place in hackathon.",
     tech: ["Python", "OpenCV", "MediaPipe", "Flask"],
-    highlight: false,
+    impact: "3rd place hackathon winner",
+    status: "Completed" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
+  },
+  {
+    title: "Customer Churn Prediction",
+    description: "ML pipeline for predicting customer churn using ensemble methods and feature engineering on telecom data.",
+    tech: ["Python", "Scikit-learn", "XGBoost", "Pandas"],
+    impact: "Predictive analytics for retention",
+    status: "In Progress" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "#",
   },
 ];
 
@@ -43,26 +108,43 @@ const ProjectsSection = () => (
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className={`glass-card-hover p-6 flex flex-col ${p.highlight ? "md:col-span-2 lg:col-span-1" : ""}`}
+            transition={{ delay: i * 0.1 }}
+            className="glass-card-hover p-6 flex flex-col"
           >
             <div className="flex justify-between items-start mb-4">
-              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                </svg>
-              </div>
-              <ExternalLink size={18} className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
+              <a
+                href={p.demoLink}
+                className="teal-button text-xs py-1.5 px-3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink size={14} />
+                Demo
+              </a>
+              <span className={`text-xs font-mono px-2.5 py-1 rounded-full border ${statusColors[p.status]}`}>
+                {p.status}
+              </span>
             </div>
 
             <h3 className="font-heading font-bold text-foreground mb-2">{p.title}</h3>
-            <p className="text-muted-foreground text-sm flex-1 mb-4">{p.description}</p>
+            <p className="text-muted-foreground text-sm flex-1 mb-2">{p.description}</p>
+            <p className="text-primary text-xs font-mono mb-4">⚡ {p.impact}</p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-4">
               {p.tech.map((t) => (
                 <span key={t} className="text-xs font-mono text-primary/80">{t}</span>
               ))}
             </div>
+
+            <a
+              href={p.githubLink}
+              className="outline-button text-xs py-2 px-4 w-fit mt-auto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={14} />
+              GitHub
+            </a>
           </motion.div>
         ))}
       </div>
