@@ -6,8 +6,9 @@ const certifications = [
     title: "Machine Learning Specialization",
     provider: "DeepLearning.AI (Coursera)",
     description: "Comprehensive ML course covering supervised, unsupervised learning, and neural networks.",
-    link: "#",
+    link: "/certificates/Coursera_ml specialisation.pdf",
   },
+
   {
     title: "Microsoft Future Ready",
     provider: "Microsoft (Azure & Cloud)",

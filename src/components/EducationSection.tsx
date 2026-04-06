@@ -29,24 +29,22 @@ const EducationSection = () => (
       </motion.h2>
       <div className="section-subheading" />
 
-      <div className="relative border-l-2 border-primary/30 ml-4 space-y-10">
+      <div className="space-y-6">
         {education.map((ed, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.2 }}
-            className="relative pl-8"
+            transition={{ delay: i * 0.15 }}
+            className="glass-card-hover p-6"
           >
-            {/* Dot */}
-            <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background" />
-            <div className="glass-card-hover p-6">
-              <p className="font-mono text-primary text-xs mb-1">{ed.period}</p>
-              <h3 className="font-heading font-bold text-lg text-foreground">{ed.degree}</h3>
-              <p className="text-muted-foreground text-sm">{ed.school}</p>
-              <p className="text-primary text-sm font-semibold mt-2">{ed.grade}</p>
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-2">
+              <h3 className="font-heading font-bold text-lg text-foreground leading-tight">{ed.degree}</h3>
+              <p className="font-mono text-primary text-base sm:text-lg font-bold shrink-0">{ed.period}</p>
             </div>
+            <p className="text-muted-foreground text-sm">{ed.school}</p>
+            <p className="text-primary text-sm font-semibold mt-4">{ed.grade}</p>
           </motion.div>
         ))}
       </div>

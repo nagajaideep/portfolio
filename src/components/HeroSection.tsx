@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Code } from "lucide-react";
 import GitHubActivity from "./GitHubActivity";
+import LeetCodeActivity from "./LeetCodeActivity";
 
 const roles = [
   "Aspiring AI/ML Engineer",
@@ -10,9 +11,9 @@ const roles = [
 ];
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com/in/nagajaideep", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/nagajaideepchowdary/", label: "LinkedIn" },
   { icon: Github, href: "https://github.com/nagajaideep", label: "GitHub" },
-  { icon: Code, href: "https://leetcode.com/nagajaideep", label: "LeetCode" },
+  { icon: Code, href: "https://leetcode.com/u/jaideepchowdary2/", label: "LeetCode" },
 ];
 
 const HeroSection = () => {
@@ -41,8 +42,8 @@ const HeroSection = () => {
   }, [charIndex, deleting, roleIndex]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative min-h-screen flex items-center justify-center px-6 py-24">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,8 +94,9 @@ const HeroSection = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 transition-all duration-300"
+              className="p-3 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 relative group"
               aria-label={link.label}
+              title={link.label}
             >
               <link.icon size={20} />
             </a>
@@ -115,8 +117,11 @@ const HeroSection = () => {
           </a>
         </motion.div>
 
-        {/* GitHub Activity */}
-        <GitHubActivity />
+        {/* Activity Maps */}
+        <div className="grid lg:grid-cols-2 gap-6 mt-12 items-stretch">
+          <GitHubActivity />
+          <LeetCodeActivity />
+        </div>
       </div>
     </section>
   );

@@ -32,15 +32,6 @@ const projects = [
     githubLink: "#",
   },
   {
-    title: "BioAge-Net",
-    description: "Deep learning model for biological age estimation using multi-modal health data. Achieved MAE of 4.91 years.",
-    tech: ["Python", "TensorFlow", "CNNs", "Medical Imaging"],
-    impact: "MAE of 4.91 years",
-    status: "Under Review" as ProjectStatus,
-    demoLink: "#",
-    githubLink: "#",
-  },
-  {
     title: "MILK10k Skin Lesion Classifier",
     description: "Multimodal skin cancer detection combining dermoscopic images + clinical metadata with attention fusion.",
     tech: ["Python", "ResNet", "EfficientNet", "Grad-CAM"],

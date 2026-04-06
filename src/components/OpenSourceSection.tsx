@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GitPullRequest, Github, Star } from "lucide-react";
+import { GitPullRequest, Github, Star, ExternalLink } from "lucide-react";
 
 const contributions = [
   {
@@ -11,6 +11,7 @@ const contributions = [
     repo: "arxlang/astx",
     contribution: "70% performance boost",
     description: "Optimized transpiler efficiency, achieving 100% test pass rate with version-specific modules.",
+    link: "https://github.com/arxlang/astx/pull/288",
   },
 ];
 
@@ -62,14 +63,27 @@ const OpenSourceSection = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="glass-card-hover p-6"
+            className="glass-card-hover p-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4"
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Github size={16} className="text-primary" />
-              <h3 className="font-heading font-bold text-foreground">{c.repo}</h3>
-              <span className="text-xs font-mono text-primary ml-2">→ {c.contribution}</span>
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <Github size={16} className="text-primary" />
+                <h3 className="font-heading font-bold text-foreground">{c.repo}</h3>
+                <span className="text-xs font-mono text-primary">→ {c.contribution}</span>
+              </div>
+              <p className="text-muted-foreground text-sm">{c.description}</p>
             </div>
-            <p className="text-muted-foreground text-sm">{c.description}</p>
+            {c.link && (
+              <a
+                href={c.link}
+                className="outline-button text-xs py-1.5 px-3 w-fit shrink-0 mt-2 sm:mt-0 flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink size={14} />
+                View PR
+              </a>
+            )}
           </motion.div>
         ))}
       </div>

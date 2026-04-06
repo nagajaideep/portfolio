@@ -32,13 +32,6 @@ const papers = [
     status: "Under Manuscript Preparation" as ResearchStatus,
     link: "#",
   },
-  {
-    title: "Land Cover Classification",
-    organization: "IIT Roorkee (CoDA Lab)",
-    description: "81.68% accuracy in land cover classification using satellite + socio-economic data with Random Forest, ANOVA, MANOVA.",
-    status: "Completed" as ResearchStatus,
-    link: "#",
-  },
 ];
 
 const ResearchSection = () => (
