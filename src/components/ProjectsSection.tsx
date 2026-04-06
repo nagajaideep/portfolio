@@ -20,7 +20,7 @@ const projects = [
     impact: "Multi-agent LLM routing system",
     status: "Production" as ProjectStatus,
     demoLink: "#",
-    githubLink: "#",
+    githubLink: "https://github.com/nagajaideep/AI-powered-customer-support",
   },
   {
     title: "Multilingual Recipe Translation System",
@@ -47,7 +47,7 @@ const projects = [
     impact: "Hands-free booking experience",
     status: "Completed" as ProjectStatus,
     demoLink: "#",
-    githubLink: "#",
+    githubLink: "https://github.com/nagajaideep/restaurant-booking-voice-agent",
   },
   {
     title: "Kitchen Talk Recorder",
@@ -56,7 +56,7 @@ const projects = [
     impact: "Real-time voice transcription",
     status: "Live" as ProjectStatus,
     demoLink: "#",
-    githubLink: "#",
+    githubLink: "https://github.com/nagajaideep/kitchen-talk-recorder",
   },
   {
     title: "Gesture Presentation System",

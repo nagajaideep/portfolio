@@ -43,7 +43,7 @@ const DSASection = () => (
         </div>
 
         <a
-          href="#"
+          href="https://codolio.com/profile/nagajaideepchowdary"
           className="outline-button text-xs py-2 px-4 w-fit"
           target="_blank"
           rel="noopener noreferrer"
