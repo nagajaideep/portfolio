@@ -78,7 +78,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5 }}
           className="text-muted-foreground max-w-xl text-lg leading-relaxed mb-8"
         >
-          Building intelligent systems with real-world impact using AI, Machine Learning, and scalable software solutions.
+          Building intelligent systems with real world impact using AI, Machine Learning, and scalable software solutions.
         </motion.p>
 
         {/* Social Links */}

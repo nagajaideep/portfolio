@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
-  { label: "Open Source", href: "#opensource" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", num: "01" },
+  { label: "Experience", href: "#experience", num: "02" },
+  { label: "Skills", href: "#skills", num: "03" },
+  { label: "Projects", href: "#projects", num: "04" },
+  { label: "Research", href: "#research", num: "05" },
+  { label: "Open Source", href: "#opensource", num: "09" },
+  { label: "Contact", href: "#contact", num: "10" },
 ];
 
 const Navbar = () => {
@@ -46,7 +46,6 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i }}
             >
-              <span className="text-primary font-mono text-xs mr-1">0{i + 1}.</span>
               {l.label}
             </motion.a>
           ))}
@@ -85,7 +84,6 @@ const Navbar = () => {
               className="block py-3 nav-link"
               onClick={() => setMobileOpen(false)}
             >
-              <span className="text-primary font-mono text-xs mr-2">0{i + 1}.</span>
               {l.label}
             </a>
           ))}

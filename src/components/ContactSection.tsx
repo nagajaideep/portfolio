@@ -51,7 +51,8 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-primary font-mono text-sm mb-2"
         >
-          08. What's Next?
+          {/* Use 10 since it's the 10th section sequentially on the page */}
+          10. What's Next?
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
