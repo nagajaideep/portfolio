@@ -44,6 +44,23 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 py-24">
       <div className="max-w-6xl mx-auto w-full">
+        {/* Latest Achievements Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-8"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-primary backdrop-blur-md">
+            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+            AWS AI Practitioner Challenge ✅
+          </div>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-primary backdrop-blur-md">
+            <span className="flex h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+            AWS Nano Degree (Awaiting Exam) ⏳
+          </div>
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

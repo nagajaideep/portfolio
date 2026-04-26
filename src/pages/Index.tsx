@@ -1,4 +1,5 @@
 import ParticleBackground from "@/components/ParticleBackground";
+import SidePanel from "@/components/SidePanel";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import EducationSection from "@/components/EducationSection";
@@ -16,7 +17,10 @@ import Footer from "@/components/Footer";
 const Index = () => (
   <div className="relative">
     <ParticleBackground />
-    <Navbar />
+    <SidePanel />
+    <div className="relative z-50">
+      <Navbar />
+    </div>
     <main className="relative z-10">
       <HeroSection />
       <EducationSection />
