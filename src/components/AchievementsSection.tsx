@@ -18,7 +18,7 @@ const AchievementsSection = () => (
         viewport={{ once: true }}
         className="section-heading"
       >
-        <span className="text-primary font-mono text-xl mr-2">07.</span>
+        <span className="text-primary font-mono text-xl mr-2">08.</span>
         Achievements
       </motion.h2>
       <div className="section-subheading" />

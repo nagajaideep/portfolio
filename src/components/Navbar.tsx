@@ -5,10 +5,11 @@ const links = [
   { label: "About", href: "#about", num: "01" },
   { label: "Experience", href: "#experience", num: "02" },
   { label: "Skills", href: "#skills", num: "03" },
-  { label: "Projects", href: "#projects", num: "04" },
-  { label: "Research", href: "#research", num: "05" },
-  { label: "Open Source", href: "#opensource", num: "09" },
-  { label: "Contact", href: "#contact", num: "10" },
+  { label: "SaaS", href: "#saas", num: "04" },
+  { label: "Projects", href: "#projects", num: "05" },
+  { label: "Research", href: "#research", num: "06" },
+  { label: "Open Source", href: "#opensource", num: "10" },
+  { label: "Contact", href: "#contact", num: "11" },
 ];
 
 const Navbar = () => {
