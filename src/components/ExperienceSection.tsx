@@ -3,10 +3,47 @@ import { Briefcase, FlaskConical, Code2, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
+    icon: Briefcase,
+    title: "Full Stack Developer Intern",
+    company: "Anshap",
+    period: "Apr 2026 - Present",
+    points: [
+      "Integrated and evaluated multiple LLMs for a mental health platform, improving AI conversation quality, personalization, and response relevance by 75%",
+      "Built a notification and user re-engagement pipeline using event-driven workflows, scheduled reminders, and personalized alerts, increasing retention and daily engagement by 40%",
+      "Developing an in-house meeting and calling platform using LiveKit, reducing communication latency by 60%",
+    ],
+  },
+  {
+    icon: Code2,
+    title: "Software Engineering Intern (Open Source)",
+    company: "Open Sciences Lab",
+    period: "May 2025 - Aug 2025",
+    points: [
+      "Implemented a transpiler from ASTx to Python's built-in AST module for open-source cross-language transpilation",
+      "Resolved 27+ critical transpiler bugs and refactored handlers into 10 unified modules, improving transpilation performance by 70%",
+      "Automated GitHub Actions CI/CD with 100% unit test coverage across Python 3.9-3.13 and reduced contributor onboarding time by 30%",
+    ],
+    links: [
+      { name: "View Certificate", url: "/certificates/osl certificate.pdf" },
+      { name: "Relieving Letter", url: "/certificates/osl reliving letter.png" }
+    ],
+  },
+  {
+    icon: Briefcase,
+    title: "Tech Lead Intern - AI",
+    company: "Viswam.AI",
+    period: "May 2025 - Jul 2025",
+    points: [
+      "Led NLP pipeline development using Transformer models",
+      "Contributed 40GB+ dataset and 800+ annotations",
+      "Fine-tuned AI models for Indic language applications",
+    ],
+  },
+  {
     icon: FlaskConical,
-    title: "Research Intern – Machine Learning",
+    title: "Research Intern - Machine Learning",
     company: "IIT Roorkee (CoDA Lab)",
-    period: "Apr 2025 – May 2025",
+    period: "Apr 2025 - May 2025",
     points: [
       "Achieved 81.68% accuracy in land cover classification using satellite + socio-economic data",
       "Built scalable climate analysis framework using Random Forest, ANOVA, MANOVA",
@@ -15,32 +52,6 @@ const experiences = [
     links: [
       { name: "View Certificate", url: "/certificates/iit_roorkee_2025.pdf" },
       { name: "Relieving Letter", url: "/certificates/iit roorkee releving letter.png" }
-    ],
-  },
-  {
-    icon: Briefcase,
-    title: "Tech Lead Intern – AI",
-    company: "Viswam.AI",
-    period: "May 2025 – Jul 2025",
-    points: [
-      "Led NLP pipeline development using Transformer models",
-      "Contributed 40GB+ dataset and 800+ annotations",
-      "Fine-tuned AI models for Indic language applications",
-    ],
-  },
-  {
-    icon: Code2,
-    title: "Software Engineering Intern (Open Source)",
-    company: "Open Sciences Lab",
-    period: "May 2025 – Aug 2025",
-    points: [
-      "Improved transpiler efficiency by 70%",
-      "Achieved 100% test pass rate with version-specific modules",
-      "Boosted developer adoption by 40%",
-    ],
-    links: [
-      { name: "View Certificate", url: "/certificates/osl certificate.pdf" },
-      { name: "Relieving Letter", url: "/certificates/osl reliving letter.png" }
     ],
   },
 ];
@@ -93,7 +104,7 @@ const ExperienceSection = () => (
                   <ul className="space-y-2">
                     {exp.points.map((pt, j) => (
                       <li key={j} className="flex gap-2 text-sm text-muted-foreground">
-                        <span className="text-primary mt-1 shrink-0">▹</span>
+                        <span className="text-primary mt-1 shrink-0">-</span>
                         {pt}
                       </li>
                     ))}

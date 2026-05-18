@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 type ProjectStatus = "Completed" | "Production" | "In Progress" | "Research" | "Under Review" | "Live";
 
@@ -13,6 +14,33 @@ const statusColors: Record<ProjectStatus, string> = {
 };
 
 const projects = [
+  {
+    title: "ShiftCV",
+    description: "AI resume transformer that reads uploaded PDF resumes and converts them into clean LaTeX templates with a live split-pane editor.",
+    tech: ["React", "FastAPI", "PostgreSQL", "Gemini 2.5"],
+    impact: "Cuts resume conversion from 3 hours to under 90 seconds",
+    status: "Live" as ProjectStatus,
+    demoLink: "https://shiftcv-1.onrender.com/",
+    githubLink: "https://github.com/nagajaideep/ResumeX",
+  },
+  {
+    title: "RouteIQ",
+    description: "NLP-based query routing engine that reads incoming customer messages and routes them to the right department instantly.",
+    tech: ["FastAPI", "DistilBERT", "Python", "NLP"],
+    impact: "Under 200ms classification latency and 80% less manual ticket sorting",
+    status: "Production" as ProjectStatus,
+    demoLink: "https://nlp-based-query-routing-engine.onrender.com/",
+    githubLink: "https://github.com/nagajaideep/NLP-BASED-QUERY-ROUTING-ENGINE",
+  },
+  {
+    title: "Restaurant Booking Voice Agent",
+    description: "Voice-driven reservation demo that lets users complete table bookings through natural speech interactions.",
+    tech: ["React", "Web Speech API", "NLP", "Flask"],
+    impact: "Completes bookings in under 2 minutes and reduces booking friction by 60%",
+    status: "Completed" as ProjectStatus,
+    demoLink: "https://restaurant-booking-voice-agent.netlify.app/",
+    githubLink: "https://github.com/nagajaideep/restaurant-booking-voice-agent",
+  },
   {
     title: "AI-Powered Customer Support Agent",
     description: "Multi-agent LLM routing system for intelligent customer support. Routes queries to specialized agents for faster resolution.",
@@ -39,15 +67,6 @@ const projects = [
     status: "Research" as ProjectStatus,
     demoLink: "#",
     githubLink: "#",
-  },
-  {
-    title: "Restaurant Booking Voice Agent",
-    description: "Voice-powered restaurant booking system using speech recognition and NLP for hands-free reservations.",
-    tech: ["Python", "Speech Recognition", "NLP", "Flask"],
-    impact: "Hands-free booking experience",
-    status: "Completed" as ProjectStatus,
-    demoLink: "#",
-    githubLink: "https://github.com/nagajaideep/restaurant-booking-voice-agent",
   },
   {
     title: "Kitchen Talk Recorder",
@@ -78,69 +97,94 @@ const projects = [
   },
 ];
 
-const ProjectsSection = () => (
-  <section id="projects" className="py-24 px-6">
-    <div className="max-w-5xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="section-heading"
-      >
-        <span className="text-primary font-mono text-xl mr-2">05.</span>
-        Projects
-      </motion.h2>
-      <div className="section-subheading" />
+const featuredProjectCount = 3;
+const hasLink = (url: string) => url && url !== "#";
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((p, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="glass-card-hover p-6 flex flex-col"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <a
-                href={p.demoLink}
-                className="teal-button text-xs py-1.5 px-3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink size={14} />
-                Demo
-              </a>
-              <span className={`text-xs font-mono px-2.5 py-1 rounded-full border ${statusColors[p.status]}`}>
-                {p.status}
-              </span>
-            </div>
+const ProjectsSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, featuredProjectCount);
 
-            <h3 className="font-heading font-bold text-foreground mb-2">{p.title}</h3>
-            <p className="text-muted-foreground text-sm flex-1 mb-2">{p.description}</p>
-            <p className="text-primary text-xs font-mono mb-4">⚡ {p.impact}</p>
+  return (
+    <section id="projects" className="py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="section-heading"
+        >
+          <span className="text-primary font-mono text-xl mr-2">05.</span>
+          Projects
+        </motion.h2>
+        <div className="section-subheading" />
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {p.tech.map((t) => (
-                <span key={t} className="text-xs font-mono text-primary/80">{t}</span>
-              ))}
-            </div>
-
-            <a
-              href={p.githubLink}
-              className="outline-button text-xs py-2 px-4 w-fit mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {visibleProjects.map((p, i) => (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="glass-card-hover p-6 flex flex-col"
             >
-              <Github size={14} />
-              GitHub
-            </a>
-          </motion.div>
-        ))}
+              <div className="flex justify-end mb-4">
+                <span className={`text-xs font-mono px-2.5 py-1 rounded-full border ${statusColors[p.status]}`}>
+                  {p.status}
+                </span>
+              </div>
+
+              <h3 className="font-heading font-bold text-foreground mb-2">{p.title}</h3>
+              <p className="text-muted-foreground text-sm flex-1 mb-2">{p.description}</p>
+              <p className="text-primary text-xs font-mono mb-4">Impact: {p.impact}</p>
+
+              <div className="flex flex-wrap gap-2 mb-5">
+                {p.tech.map((t) => (
+                  <span key={t} className="text-xs font-mono text-primary/80">{t}</span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3 mt-auto">
+                {hasLink(p.demoLink) && (
+                  <a
+                    href={p.demoLink}
+                    className="teal-button text-xs py-2 px-4 w-fit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink size={14} />
+                    Live
+                  </a>
+                )}
+                {hasLink(p.githubLink) && (
+                  <a
+                    href={p.githubLink}
+                    className="outline-button text-xs py-2 px-4 w-fit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github size={14} />
+                    GitHub
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <button
+            type="button"
+            onClick={() => setShowAll((current) => !current)}
+            className="outline-button text-sm py-2.5 px-5"
+          >
+            {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            {showAll ? "Show fewer projects" : `Show ${projects.length - featuredProjectCount} more projects`}
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default ProjectsSection;

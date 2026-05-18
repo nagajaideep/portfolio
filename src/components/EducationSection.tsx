@@ -4,14 +4,16 @@ const education = [
   {
     degree: "B.Tech in Computer Science (AI & ML)",
     school: "Mahatma Gandhi Institute of Technology",
-    period: "2023 – 2027",
-    grade: "CGPA: 9.24",
+    period: "2023 - 2027",
+    grade: "CGPA: 9.21",
+    details: "Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks",
   },
   {
     degree: "Intermediate (TSBIE)",
     school: "Narayana Junior College",
-    period: "2021 – 2023",
-    grade: "CGPA: 9.01",
+    period: "2021 - 2023",
+    grade: "Percentage: 90.1%",
+    details: "MPC stream | Class XII equivalent",
   },
 ];
 
@@ -45,6 +47,7 @@ const EducationSection = () => (
             </div>
             <p className="text-muted-foreground text-sm">{ed.school}</p>
             <p className="text-primary text-sm font-semibold mt-4">{ed.grade}</p>
+            <p className="text-muted-foreground text-xs mt-2">{ed.details}</p>
           </motion.div>
         ))}
       </div>

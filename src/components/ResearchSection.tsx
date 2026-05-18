@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { FileText, ExternalLink } from "lucide-react";
 
-type ResearchStatus = "Under Peer Review" | "In Progress" | "Under Manuscript Preparation" | "Completed";
+type ResearchStatus = "Accepted" | "Under Peer Review" | "In Progress" | "Under Manuscript Preparation" | "Completed";
 
 const statusColors: Record<ResearchStatus, string> = {
+  Accepted: "bg-green-500/20 text-green-400 border-green-500/30",
   "Under Peer Review": "bg-orange-500/20 text-orange-400 border-orange-500/30",
   "In Progress": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
   "Under Manuscript Preparation": "bg-blue-500/20 text-blue-400 border-blue-500/30",
@@ -13,9 +14,9 @@ const statusColors: Record<ResearchStatus, string> = {
 const papers = [
   {
     title: "BioAge-Net",
-    organization: "IEEE",
-    description: "Deep learning model for biological age estimation. Achieved MAE of 4.91 years.",
-    status: "Under Peer Review" as ResearchStatus,
+    organization: "IEEE Xplore (ICSCT 2026)",
+    description: "Research paper on biological age estimation from chest radiographs accepted in IEEE Xplore.",
+    status: "Accepted" as ResearchStatus,
     link: "#",
   },
   {

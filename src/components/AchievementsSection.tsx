@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { Trophy, Award, Medal, Code } from "lucide-react";
 
 const achievements = [
+  { icon: Award, text: "Silver Medal for academic excellence in 2nd year B.Tech with 9.38 CGPA" },
+  { icon: Medal, text: "IEEE Xplore acceptance - Biological Age Estimation from Chest Radiographs (ICSCT 2026)" },
+  { icon: Code, text: "Vice Chair, ACM Student Chapter, MGIT" },
   { icon: Trophy, text: "NASA Space Settlement Contest Winner" },
-  { icon: Award, text: "1st Place – State-Level Project Expo" },
+  { icon: Award, text: "1st Place - State-Level Project Expo" },
   { icon: Medal, text: "Smart India Hackathon Finalist" },
-  { icon: Medal, text: "3rd Place – Gesture AI Hackathon" },
-  { icon: Code, text: "Solved 100+ DSA Problems" },
+  { icon: Medal, text: "3rd Place - Gesture AI Hackathon" },
+  { icon: Code, text: "Solved 300+ DSA Problems" },
 ];
 
 const AchievementsSection = () => (
@@ -23,18 +26,23 @@ const AchievementsSection = () => (
       </motion.h2>
       <div className="section-subheading" />
 
-      <div className="flex flex-wrap gap-3">
+      <div className="space-y-3">
         {achievements.map((a, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: -18 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="badge-achievement"
+            className="glass-card-hover px-5 py-4 flex items-center gap-4"
           >
-            <a.icon size={16} className="text-primary" />
-            {a.text}
+            <span className="font-mono text-primary text-sm w-8 shrink-0">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0">
+              <a.icon size={18} />
+            </div>
+            <p className="text-muted-foreground text-sm sm:text-base">{a.text}</p>
           </motion.div>
         ))}
       </div>
