@@ -15,11 +15,11 @@ const skillCategories = [
   },
   {
     title: "Cloud",
-    skills: ["AWS (EC2, S3)", "Azure App Service", "Google Earth Engine"],
+    skills: ["AWS (EC2, S3)", "Azure App Service", "Google Earth Engine", "Docker", "Kubernetes"],
   },
   {
     title: "GenAI & ML",
-    skills: ["LLM API Integration", "Google Gemini 2.5", "TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face"],
+    skills: ["LLM API Integration", "Google Gemini 2.5", "TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face", "LangChain", "LlamaIndex"],
   },
   {
     title: "Libraries",

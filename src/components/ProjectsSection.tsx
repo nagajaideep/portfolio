@@ -24,6 +24,15 @@ const projects = [
     githubLink: "https://github.com/nagajaideep/ResumeX",
   },
   {
+    title: "Food Wastage Management System",
+    description: "Database-driven system tracking surplus food from restaurants, events, and individuals, routing it to nearby NGOs and people in need. Built with 9 tables from public datasets (NFHS-5, FAO, FCI, Kaggle) featuring stored procedures and triggers for automation.",
+    tech: ["PostgreSQL", "PL/SQL", "Python", "Data Engineering"],
+    impact: "Reduces food wastage, routes surplus to NGOs; 27,000+ restaurant donors, real-time availability tracking",
+    status: "Production" as ProjectStatus,
+    demoLink: "#",
+    githubLink: "https://github.com/nagajaideep/food-wastage-management",
+  },
+  {
     title: "RouteIQ",
     description: "NLP-based query routing engine that reads incoming customer messages and routes them to the right department instantly.",
     tech: ["FastAPI", "DistilBERT", "Python", "NLP"],

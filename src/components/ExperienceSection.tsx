@@ -4,9 +4,9 @@ import { Briefcase, FlaskConical, Code2, ExternalLink } from "lucide-react";
 const experiences = [
   {
     icon: Briefcase,
-    title: "Full Stack Developer Intern",
+    title: "Software Engineer Intern",
     company: "Anshap",
-    period: "Apr 2026 - Present",
+    period: "Apr 2025 - Jun 2026",
     points: [
       "Integrated and evaluated multiple LLMs for a mental health platform, improving AI conversation quality, personalization, and response relevance by 75%",
       "Built a notification and user re-engagement pipeline using event-driven workflows, scheduled reminders, and personalized alerts, increasing retention and daily engagement by 40%",

@@ -33,6 +33,13 @@ const papers = [
     status: "Under Manuscript Preparation" as ResearchStatus,
     link: "#",
   },
+  {
+    title: "Amazon ML Challenge 2025",
+    organization: "Independent Research",
+    description: "Built machine learning model to predict product prices using product images and text descriptions. Improved SMAPE from 57% to 52% through iterative approach.",
+    status: "Completed" as ResearchStatus,
+    link: "#",
+  },
 ];
 
 const ResearchSection = () => (
