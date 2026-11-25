@@ -2,14 +2,17 @@ import { motion } from "framer-motion";
 import { Trophy, Award, Medal, Code } from "lucide-react";
 
 const achievements = [
+  { icon: Medal, text: "First-author paper published in IEEE Xplore - Biological Age Estimation from Chest Radiographs (ICSCST 2026)" },
+  { icon: Medal, text: "Co-author, BrainRiskNet - accepted at ISED 2026 (NIT Warangal)" },
+  { icon: Trophy, text: "Amazon ML Challenge 2026 - Rank 948, 0.981 macro F0.5 on entity resolution over 9-12M record pairs" },
+  { icon: Trophy, text: "ISIC MILK10k Benchmark - Team Alpha ranked 55th of 165" },
   { icon: Award, text: "Silver Medal for academic excellence in 2nd year B.Tech with 9.38 CGPA" },
-  { icon: Medal, text: "IEEE Xplore acceptance - Biological Age Estimation from Chest Radiographs (ICSCT 2026)" },
   { icon: Code, text: "Vice Chair, ACM Student Chapter, MGIT" },
   { icon: Trophy, text: "NASA Space Settlement Contest Winner" },
   { icon: Award, text: "1st Place - State-Level Project Expo" },
   { icon: Medal, text: "Smart India Hackathon Finalist" },
   { icon: Medal, text: "3rd Place - Gesture AI Hackathon" },
-  { icon: Code, text: "Solved 300+ DSA Problems" },
+  { icon: Code, text: "Solved 350+ DSA Problems" },
 ];
 
 const AchievementsSection = () => (

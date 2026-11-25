@@ -5,11 +5,11 @@ import GitHubActivity from "./GitHubActivity";
 import LeetCodeActivity from "./LeetCodeActivity";
 
 const roles = [
-  "Full Stack Developer Intern",
-  "Software Engineer",
+  "AI Safety & LLM Evaluation Researcher",
+  "Undergraduate Research Fellow",
   "AI/ML Engineer",
-  "Research Enthusiast",
-  "Open to Work",
+  "Software Engineer",
+  "Open to Research Collaborations",
 ];
 
 const socialLinks = [
@@ -55,15 +55,15 @@ const HeroSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-primary backdrop-blur-md">
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-            Full Stack Intern @ Anshap
+            Research Fellow: LLM Evaluation & Multi-Agent Systems
           </div>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-primary backdrop-blur-md">
             <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-            Open to Work
+            Open to Research Collaborations
           </div>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-primary backdrop-blur-md">
             <span className="flex h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
-            IEEE Xplore Acceptance
+            First-Author Paper in IEEE Xplore
           </div>
         </motion.div>
 
@@ -101,7 +101,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5 }}
           className="text-muted-foreground max-w-xl text-lg leading-relaxed mb-8"
         >
-          Building intelligent systems with real world impact using AI, Machine Learning, and scalable software solutions.
+          I build evaluations that test whether LLM behaviour, and the fixes applied to it, actually hold up: reasoning under perturbation, LLM agents that must re-adapt when conditions change, and repairing models after bad training data.
         </motion.p>
 
         {/* Social Links */}
@@ -132,8 +132,8 @@ const HeroSection = () => {
           transition={{ delay: 0.6 }}
           className="flex flex-wrap gap-4"
         >
-          <a href="#projects" className="teal-button">
-            View Projects
+          <a href="#research" className="teal-button">
+            View Research
           </a>
           <a href="#contact" className="outline-button">
             Contact Me

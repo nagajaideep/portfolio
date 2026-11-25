@@ -48,7 +48,7 @@ const SidePanel = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
               </span>
-              <span className="font-heading font-bold text-sm text-foreground tracking-wide uppercase">Open to Work</span>
+              <span className="font-heading font-bold text-sm text-foreground tracking-wide uppercase">Open to Research</span>
             </div>
 
             <div className="space-y-4 text-sm">
@@ -58,7 +58,7 @@ const SidePanel = () => {
                   <span>Target Roles</span>
                 </div>
                 <p className="text-muted-foreground ml-5 leading-relaxed">
-                  AI Engineering <br/> Backend Infrastructure <br/> Internships
+                  AI Safety & LLM Eval Research <br/> Research Collaborations <br/> AI Engineering
                 </p>
               </div>
 
@@ -78,7 +78,7 @@ const SidePanel = () => {
                   <span>Current Focus</span>
                 </div>
                 <p className="text-muted-foreground ml-5 leading-relaxed">
-                  Scalable Systems <br/> Applied AI Models
+                  LLM Evaluation & Robustness <br/> Multi-Agent LLM Systems <br/> Machine Unlearning
                 </p>
               </div>
             </div>
