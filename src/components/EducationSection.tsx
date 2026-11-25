@@ -5,8 +5,8 @@ const education = [
     degree: "B.Tech in Computer Science (AI & ML)",
     school: "Mahatma Gandhi Institute of Technology",
     period: "2023 - 2027",
-    grade: "CGPA: 9.21",
-    details: "Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks",
+    grade: "CGPA: 9.24 / 10 | Silver Medal for academic excellence",
+    details: "Undergraduate Research Fellow (LLM Evaluation & Multi-Agent Systems) | Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks",
   },
   {
     degree: "Intermediate (TSBIE)",

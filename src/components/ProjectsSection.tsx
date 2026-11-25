@@ -15,6 +15,15 @@ const statusColors: Record<ProjectStatus, string> = {
 
 const projects = [
   {
+    title: "OpsPilot - Guarded LLM Agent",
+    description: "Infrastructure change-management tool where an LLM agent uses 5 read-only tools to draft risk ratings and rollout plans, behind a deterministic guardrail, prompt-injection defences and mandatory human approval with an append-only audit log.",
+    tech: ["Java", "Spring Boot", "React", "PostgreSQL", "LLM Agents"],
+    impact: "30-case evaluation set, rule-based fallback when the LLM fails, 68 automated tests",
+    status: "Live" as ProjectStatus,
+    demoLink: "https://opspilot-3vu3.onrender.com",
+    githubLink: "https://github.com/nagajaideep/opspilot",
+  },
+  {
     title: "ShiftCV",
     description: "AI resume transformer that reads uploaded PDF resumes and converts them into clean LaTeX templates with a live split-pane editor.",
     tech: ["React", "FastAPI", "PostgreSQL", "Gemini 2.5"],
@@ -72,7 +81,7 @@ const projects = [
     title: "MILK10k Skin Lesion Classifier",
     description: "Multimodal skin cancer detection combining dermoscopic images + clinical metadata with attention fusion.",
     tech: ["Python", "ResNet", "EfficientNet", "Grad-CAM"],
-    impact: "Targeting >95% accuracy with explainability",
+    impact: "Team Alpha ranked 55th of 165 in the ISIC MILK10k Benchmark",
     status: "Research" as ProjectStatus,
     demoLink: "#",
     githubLink: "#",

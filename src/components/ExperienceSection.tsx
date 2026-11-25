@@ -3,10 +3,25 @@ import { Briefcase, FlaskConical, Code2, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
+    icon: FlaskConical,
+    title: "Undergraduate Research Fellow - Multi-Agent Systems & LLM Evaluation",
+    company: "MGIT, Hyderabad",
+    period: "Aug 2026 - Present",
+    points: [
+      "Perturbation fingerprints: built a fresh 900-item logic benchmark (9 schemas, private held-out split) with 5 perturbation axes (paraphrase, format, order, reversal, knowledge conflict), scoring accuracy, consistency, coverage and cost together",
+      "Mitigation x axis matrix: flag-and-reason, format anchoring and self-consistency each fix their home axis but do not transfer to the others; surface noise and belief conflict are separate failure mechanisms",
+      "Regret under elicitation: in repeated games where an LLM agent must re-adapt after the opponent switches strategy, score-based and declared-distribution control behave as different controllers (TV gap 0.29-0.37 across 3 models; sign flips in 7/9 settings)",
+      "Built resumable, cached experiment pipelines across 15 versions, with multi-seed runs and human audit of results",
+    ],
+    links: [
+      { name: "Research Log", url: "https://github.com/nagajaideep/Research-Work" }
+    ],
+  },
+  {
     icon: Briefcase,
     title: "Software Engineer Intern",
     company: "Anshap",
-    period: "Apr 2025 - Jun 2026",
+    period: "Apr 2026 - Jun 2026",
     points: [
       "Integrated and evaluated multiple LLMs for a mental health platform, improving AI conversation quality, personalization, and response relevance by 75%",
       "Built a notification and user re-engagement pipeline using event-driven workflows, scheduled reminders, and personalized alerts, increasing retention and daily engagement by 40%",

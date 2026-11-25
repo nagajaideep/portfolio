@@ -2,6 +2,10 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
   {
+    title: "AI Safety & Evaluation",
+    skills: ["LLM Evaluation Harnesses", "Perturbation & Robustness Testing", "Multi-Agent LLM Simulation", "Machine Unlearning (SCRUB, SSD)", "Multi-Seed Experiment Design", "Statistical Testing (Wilcoxon, MANOVA)", "Guardrails & Prompt-Injection Defences", "Human-in-the-Loop Review"],
+  },
+  {
     title: "Languages",
     skills: ["Java", "Python", "JavaScript", "TypeScript", "C", "SQL"],
   },

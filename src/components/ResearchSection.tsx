@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { FileText, ExternalLink } from "lucide-react";
 
-type ResearchStatus = "Accepted" | "Under Peer Review" | "In Progress" | "Under Manuscript Preparation" | "Completed";
+type ResearchStatus = "Published" | "Accepted" | "Under Peer Review" | "In Progress" | "Under Manuscript Preparation" | "Completed";
 
 const statusColors: Record<ResearchStatus, string> = {
+  Published: "bg-green-500/20 text-green-400 border-green-500/30",
   Accepted: "bg-green-500/20 text-green-400 border-green-500/30",
   "Under Peer Review": "bg-orange-500/20 text-orange-400 border-orange-500/30",
   "In Progress": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
@@ -13,24 +14,52 @@ const statusColors: Record<ResearchStatus, string> = {
 
 const papers = [
   {
+    title: "Perturbation Fingerprints: Is LLM Inconsistency One Failure or Two?",
+    organization: "Undergraduate Research Fellowship, MGIT",
+    description: "A fresh 900-item logic benchmark with 5 perturbation axes and a mitigation x axis transfer matrix. Surface noise and belief conflict fail differently, and fixes overfit to the axis they were designed for, so a model can look robust on one test while the underlying problem is untouched.",
+    status: "In Progress" as ResearchStatus,
+    link: "https://github.com/nagajaideep/Research-Work",
+  },
+  {
+    title: "Regret Under Elicitation: Do LLM Agent Regret Numbers Depend on How You Ask?",
+    organization: "Undergraduate Research Fellowship, MGIT",
+    description: "LLM agents in repeated games where the opponent switches strategy. Scoring actions vs asking the model for a distribution gives different controllers (TV gap 0.29-0.37 across 3 models), so evaluation protocol must be reported with the result.",
+    status: "Under Manuscript Preparation" as ResearchStatus,
+    link: "https://github.com/nagajaideep/Research-Work",
+  },
+  {
+    title: "Corrective Machine Unlearning for Backdoors, Label Noise and Bias",
+    organization: "Independent Research, faculty-guided (MGIT)",
+    description: "Can a model be repaired when only part of the bad training data is found? Extends Goel et al. (TMLR 2024) to spurious bias: SCRUB removed 48% of a bias but only 4% of a backdoor. 585-run multi-seed design with a validation/test split; caught and fixed an evaluator that scored a destroyed model as fixed.",
+    status: "In Progress" as ResearchStatus,
+    link: "#",
+  },
+  {
     title: "BioAge-Net",
-    organization: "IEEE Xplore (ICSCT 2026)",
-    description: "Research paper on biological age estimation from chest radiographs accepted in IEEE Xplore.",
+    organization: "IEEE Xplore (ICSCST 2026) - First Author",
+    description: "Biological age estimation from chest radiographs with ResNet-50, age-gap risk stratification and Grad-CAM explainability. MAE of 4.91 years on the held-out NIH ChestX-Ray14 test set.",
+    status: "Published" as ResearchStatus,
+    link: "#",
+  },
+  {
+    title: "BrainRiskNet",
+    organization: "ISED 2026 (NIT Warangal) - Co-author",
+    description: "Dual-head CNN-ConvLSTM for brain tumor MRI classification with uncertainty-aware severity assessment.",
     status: "Accepted" as ResearchStatus,
     link: "#",
   },
   {
     title: "Skin Lesion Classification",
     organization: "Independent Research",
-    description: "Multimodal skin cancer detection system combining dermoscopic images with clinical metadata using attention fusion.",
-    status: "In Progress" as ResearchStatus,
+    description: "Multimodal skin cancer detection system combining dermoscopic images with clinical metadata using attention fusion, with Grad-CAM to check what the model attends to. Team Alpha ranked 55th of 165 in the ISIC MILK10k Benchmark.",
+    status: "Completed" as ResearchStatus,
     link: "#",
   },
   {
     title: "Urban Cooling Islands Research",
     organization: "IIT Roorkee",
-    description: "ML + satellite data for urban heat analysis and identification of high-risk zones.",
-    status: "Under Manuscript Preparation" as ResearchStatus,
+    description: "ML + satellite data for urban heat analysis and identification of high-risk zones. Submitted to the Journal of Water and Climate Change (IWA Publishing).",
+    status: "Under Peer Review" as ResearchStatus,
     link: "#",
   },
   {
